@@ -62,11 +62,10 @@
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
   }
 
-  /* ===== Perfectly centered flower ===== */
   .flower {
-    --size: 120px;         /* overall flower box */
-    --petal: 42px;         /* petal size */
-    --radius: 40px;        /* distance from center */
+    --size: 120px;
+    --petal: 42px;
+    --radius: 40px;
     width: var(--size);
     height: var(--size);
     position: relative;
@@ -88,14 +87,10 @@
     height: var(--petal);
     background: var(--petal);
     border-radius: 50%;
-    /* Key: translate(-50%,-50%) centers the element,
-       rotate() sets the direction,
-       translate(0, -var(--radius)) pushes it outward along that direction. */
     transform: translate(-50%, -50%) rotate(0deg) translate(0, calc(-1 * var(--radius)));
     box-shadow: 0 2px 6px rgba(0,0,0,.08) inset;
   }
 
-  /* eight petals at 45° steps */
   .p0  { transform: translate(-50%,-50%) rotate(0deg)   translate(0, calc(-1 * var(--radius))); }
   .p45 { transform: translate(-50%,-50%) rotate(45deg)  translate(0, calc(-1 * var(--radius))); }
   .p90 { transform: translate(-50%,-50%) rotate(90deg)  translate(0, calc(-1 * var(--radius))); }
@@ -133,10 +128,8 @@
   </div>
 
 <script>
-  // Countdown (to 19.12.2025 local time)
   const countdownEl = document.getElementById("countdown");
-  // If you want midnight in your local zone, avoid 'Z':
-  const targetDate = new Date(2025, 11, 19, 0, 0, 0); // months are 0-based: 11 = December
+  const targetDate = new Date(2025, 11, 19, 0, 0, 0);
 
   function updateCountdown() {
     const now = new Date();
@@ -156,7 +149,6 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // Floating hearts
   function createHeart() {
     const heart = document.createElement("div");
     heart.className = "heart";
