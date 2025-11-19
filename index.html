@@ -7,7 +7,7 @@
 <style>
   :root {
     --bg1:#ffc1cc; --bg2:#ffe4ec; --bg3:#ffd6eb;
-    --heart-color:#ff2e63; /* Brighter red for the inner heart */
+    --heart-color:#ff2e63;
     --text:#ff5e8e;
     --petal-light:#F0A6CA; 
     --petal-dark:#9C89B8;
@@ -57,7 +57,6 @@
     text-align: center;
   }
 
-  /* Floating Background Hearts */
   .heart-bg {
     position: absolute;
     color: #ff8fb1;
@@ -72,7 +71,6 @@
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
   }
 
-  /* --- TULIP CONTAINER --- */
   .tulip-container {
     position: relative;
     width: 100px;
@@ -83,7 +81,6 @@
     z-index: 5;
   }
 
-  /* Stem */
   .stem {
     width: 8px;
     height: 120px;
@@ -93,7 +90,6 @@
     bottom: -40px;
   }
 
-  /* Leaf */
   .leaf {
     width: 40px;
     height: 40px;
@@ -101,19 +97,17 @@
     border-radius: 0px 50px 0px 50px;
     position: absolute;
     bottom: -10px;
-    left: -0px; /* Adjusted to balance with narrower tulip head */
+    left: -0px;
     transform: rotate(-10deg);
   }
 
-  /* The Flower Head Wrapper */
   .tulip-head {
     position: relative;
-    width: 65px; /* Adjusted width */
+    width: 65px;
     height: 90px;
-    bottom: 70px; /* Sit on top of stem */
+    bottom: 70px;
   }
 
-  /* The Heart Hidden Inside */
   .tulip-heart {
     position: absolute;
     left: 50%;
@@ -121,12 +115,11 @@
     transform: translateX(-50%) scale(0.5);
     font-size: 30px;
     color: var(--heart-color);
-    z-index: 2; /* Inside the petals */
+    z-index: 2;
     opacity: 0;
     animation: revealHeart 5s ease-in-out infinite;
   }
 
-  /* Petals */
   .petal {
     position: absolute;
     bottom: 0;
@@ -135,9 +128,8 @@
     transform-origin: bottom center;
   }
 
-  /* Center Petal (Back) */
   .petal-center {
-    width: 35px; /* Adjusted width */
+    width: 35px;
     height: 85px;
     left: 50%;
     transform: translateX(-50%);
@@ -146,7 +138,6 @@
     z-index: 1;
   }
 
-  /* Left Petal */
   .petal-left {
     width: 45px;
     height: 80px;
@@ -157,7 +148,6 @@
     animation: openLeft 5s ease-in-out infinite;
   }
 
-  /* Right Petal */
   .petal-right {
     width: 45px;
     height: 80px;
@@ -168,9 +158,6 @@
     animation: openRight 5s ease-in-out infinite;
   }
 
-  /* --- ANIMATIONS --- */
-  
-  /* Petals Opening */
   @keyframes openLeft {
     0%, 10%, 90%, 100% { transform: rotate(0deg); }
     40%, 60% { transform: rotate(-35deg); }
@@ -181,7 +168,6 @@
     40%, 60% { transform: rotate(35deg); }
   }
 
-  /* Heart Rising and Pulsing */
   @keyframes revealHeart {
     0%, 10%, 90%, 100% { 
       bottom: 20px; 
@@ -194,7 +180,7 @@
       transform: translateX(-50%) scale(1.2); 
     }
     50% {
-      transform: translateX(-50%) scale(1.4); /* Heartbeat beat */
+      transform: translateX(-50%) scale(1.4);
     }
   }
 
@@ -221,7 +207,6 @@
 
 <script>
   const countdownEl = document.getElementById("countdown");
-  // NOTE: Month is 0-indexed (11 = December)
   const targetDate = new Date(2025, 11, 19, 0, 0, 0);
 
   function updateCountdown() {
